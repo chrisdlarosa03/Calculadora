@@ -9,32 +9,63 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-
-    final private int REQUEST_CODE_ASK_PERMISSION = 111;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        solicitarPermisos();
-
-    }
-
-    private void solicitarPermisos() {
-        int permisoStorage = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
-        int permisoCamera = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA);
-
-        if(permisoStorage != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
-                requestPermissions(new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSION);
-            }
-        }
     }
 
     public void addNum(View numero) {
         Button button = (Button) numero;
-        String valor = button.getText().toString();
+        String tecla = button.getText().toString();
+        TextView screen = (TextView) findViewById(R.id.pantalla);
+        String texto = screen.getText().toString();
+        switch (numero.getId()){
+            case R.id.btn1:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn2:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn3:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn4:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn5:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn6:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn7:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn8:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn9:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+            case R.id.btn0:
+                texto = texto + tecla;
+                screen.setText(texto);
+                break;
+        }
     }
 }
